@@ -1,5 +1,8 @@
 ## Whitefish assessment with SPiCT
 # Please visit https://github.com/DTUAqua/spict for further information, e.g. examples and vignette
+#SPiCT model applied to whitefish in Lake Constance by Stefanie Haase (Thünen) and Casper Berg (DTU Aqua)
+
+#Manuscript under preparation, please reach out to stefanie.haase@thuenen.de for further information.
 
 ## Development branch of SPiCT needed (spinup option) -> otherwise Run 2 will not be working properly (no warning message though)
 ##remotes::install_github("DTUAqua/spict/spict", ref = "dev")
