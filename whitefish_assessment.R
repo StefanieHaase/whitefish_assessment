@@ -1,17 +1,12 @@
-## Development branch of SPiCT needed (spinup option)
+## Whitefish assessment with SPiCT
+# Please visit https://github.com/DTUAqua/spict for further information, e.g. examples and vignette
+
+## Development branch of SPiCT needed (spinup option) -> otherwise Run 2 will not be working properly (no warning message though)
 ##remotes::install_github("DTUAqua/spict/spict", ref = "dev")
 library(spict)
 
-##surv = read.csv("Survey_mesh40_44.csv", sep=";", dec=",")
 surv = read.csv("Survey.csv", sep=";", dec=",")
-
-
 catch = read.csv("catches.csv",sep=";",dec=",")
-
-##effort = read.csv("Effort.csv", sep=";", dec=".")
-## This yearly effort is not accurate - seems like different catchability between quarters
-## and in Q4 effort is only partially recorded so should not be used!
-
 
 Catch_quarter = read.csv2("Catches_quarterly.csv")
 
@@ -19,6 +14,8 @@ Catch_quarter$Value <- as.numeric(Catch_quarter$Value)
 Catch_quarter <- Catch_quarter[Catch_quarter$Quarter!= "total",]
 
 Effort_quarter <- read.csv("Effort_quarterly.csv", sep=";")
+## This yearly effort is not accurate - seems like different catchability between quarters
+## and in Q4 effort is only partially recorded so should not be used!
 
 Catch_quarter$time <- as.numeric(Catch_quarter$Year)+as.numeric(Catch_quarter$Quarter)/4-0.25
 Catch_quarter_u <- Catch_quarter[order(Catch_quarter$time),] 
