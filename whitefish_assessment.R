@@ -26,7 +26,7 @@ Catch_quarter_u <- Catch_quarter[order(Catch_quarter$time),]
 Effort_quarter$time <- as.numeric(Effort_quarter$Year)+as.numeric(Effort_quarter$Quarter)/4-0.25
 Effort_quarter_u <- Effort_quarter[order(Effort_quarter$time),] 
 
-sel = which(Catch_quarter_u$JYear >= min(Effort_quarter$Year) )
+sel = which(Catch_quarter_u$Year >= min(Effort_quarter$Year) )
 selC = which(catch[,1]>=1997 & catch[,1]<=2022)  
 
 dataq <- data.frame(Year = Catch_quarter_u$Year[sel],
